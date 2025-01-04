@@ -1,24 +1,51 @@
 import Perceptron from "./perceptron.js";
 import Point from "./training.js";
 
-let canvas;
-let points = Array(100);
 let trainingIndex = 0;
 
+let canvasWidth = 500;
+let canvasHeight = 500;
+// let learningRate = 0.01;
+let isCanvasActive = false;
+
+// Function to handle form submission
+document
+  .getElementById("canvasForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent page reload
+    clearCanvasVariables();
+
+    window.learningRate = document.getElementById("lr").value;
+    window.NumOfPoints = document.getElementById("points").value;
+
+    // Show canvas container after form submission
+    document.getElementById("canvasContainer").style.display = "block";
+
+    // Create canvas with specified width and height
+    createCanvas(canvasWidth, canvasHeight);
+
+    window.master = new Perceptron(learningRate);
+    window.points = Array(int(NumOfPoints));
+    console.log(points);
+
+    for (let i = 0; i < points.length; i++) {
+      points[i] = new Point();
+    }
+
+    let inputs = [-1, 0.5];
+
+    // Activate the canvas by setting the flag to true
+    isCanvasActive = true;
+  });
+
 window.setup = function () {
-  window.master = new Perceptron();
-  canvas = createCanvas(500, 500);
-  canvas.id("canvas");
-
-  for (let i = 0; i < points.length; i++) {
-    points[i] = new Point();
-  }
-
-  let inputs = [-1, 0.5];
-  let guess = master.guess(inputs);
+  document.getElementById("canvasContainer").style.display = "none";
 };
 
 window.draw = function () {
+  if (!isCanvasActive) {
+    return; // Don't execute draw until the form is submitted
+  }
   background(220);
 
   stroke(0);
@@ -51,3 +78,21 @@ window.draw = function () {
     trainingIndex = 0;
   }
 };
+
+// Function to clear all variables
+function clearCanvasVariables() {
+  // Reset variables to initial values
+  canvasWidth = 500;
+  canvasHeight = 500;
+  isCanvasActive = false;
+  points = [];
+  trainingIndex = 0;
+
+  // Optionally, clear the canvas container or reset any other elements
+  document.getElementById("canvasContainer").style.display = "none";
+
+  // Remove any existing canvas
+  if (canvas) {
+    canvas.remove();
+  }
+}
