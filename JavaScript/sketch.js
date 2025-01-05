@@ -19,6 +19,7 @@ document
   .getElementById("canvasForm")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent page reload
+
     clearCanvasVariables();
 
     // Parse and validate form input values
@@ -56,9 +57,21 @@ window.setup = function () {
   document.getElementById("canvasContainer").style.display = "none";
 };
 
+let trainingEpoch = 0; // To track how many epochs have passed
+let weightsChanged = true; // To check if weights have changed
+
 window.draw = function () {
   if (!isCanvasActive) {
     return; // Don't execute draw until the form is submitted
+  }
+
+  if (!weightsChanged) {
+    // Stop training if weights have not changed
+    noLoop(); // Stop the draw loop
+    alert(
+      `Training complete! The perceptron converged after ${trainingEpoch} epochs.`
+    );
+    return;
   }
 
   background(220);
@@ -88,6 +101,7 @@ window.draw = function () {
     let inputs = [pt.x, pt.y, pt.bias];
     let target = pt.label;
     let guess = master.guess(inputs);
+    document.querySelector("#output").innerHTML = guess;
     if (guess == target) {
       fill(0, 255, 0);
     } else {
@@ -104,11 +118,18 @@ window.draw = function () {
   let training = window.points[trainingIndex];
   let inputs = [training.x, training.y, training.bias];
   let target = training.label;
+
   master.train(inputs, target);
+
   trainingIndex++;
 
   if (trainingIndex >= window.points.length) {
     trainingIndex = 0;
+    trainingEpoch++;
+    console.log(`Epoch ${trainingEpoch} completed.`);
+
+    // Check if weights changed during the epoch
+    weightsChanged = master.didWeightsChange();
   }
 };
 
@@ -119,7 +140,8 @@ function clearCanvasVariables() {
   trainingIndex = 0;
   mValue = undefined;
   cValue = undefined;
-
+  trainingEpoch = 0; // To track how many epochs have passed
+  weightsChanged = true;
   // Hide the canvas container
   document.getElementById("canvasContainer").style.display = "none";
 
@@ -127,6 +149,39 @@ function clearCanvasVariables() {
   if (canvas) {
     canvas.remove();
   }
+
+  master = null;
+  loop();
+}
+
+document.getElementById("resetButton").addEventListener("click", function () {
+  resetEverything();
+});
+
+function resetEverything() {
+  // Clear previous canvas and points
+  clearCanvasVariables();
+
+  // Optionally reset form values or leave them as is
+  document.getElementById("canvasForm").reset(); // This will reset the form inputs if needed
+
+  // Disable the canvas
+  isCanvasActive = false;
+
+  // Optionally hide the canvas container again
+  document.getElementById("canvasContainer").style.display = "block";
+
+  // Any other global variables you want to reset
+  points = [];
+  trainingIndex = 0;
+  trainingEpoch = 0;
+  weightsChanged = true;
+
+  // Optionally reset the UI elements like output or other dynamic content
+  document.querySelector("#output").innerHTML = "Ready for new input.";
+
+  // Log or alert that everything has been reset
+  console.log("Everything has been reset.");
 }
 
 export { mValue, cValue };

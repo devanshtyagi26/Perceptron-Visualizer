@@ -11,6 +11,8 @@ class Perceptron {
     this.weights = Array(3)
       .fill(0)
       .map(() => Math.random() * 2 - 1); // Random numbers between -1 and 1
+
+      this.previousWeights = [...this.weights]; // Keep track of the previous weights
   }
 
   // Activation function (sign function)
@@ -25,19 +27,33 @@ class Perceptron {
   // The 'guess' function that makes predictions based on inputs
   guess(inputs) {
     if (!Array.isArray(inputs) || inputs.length !== 3) {
-      console.error("Invalid inputs for guess. Expected an array of length 3:", inputs);
+      console.error(
+        "Invalid inputs for guess. Expected an array of length 3:",
+        inputs
+      );
       throw new Error("Inputs must be an array of length 3.");
     }
     let sum = 0;
 
     for (let i = 0; i < this.weights.length; i++) {
       if (isNaN(inputs[i]) || isNaN(this.weights[i])) {
-        console.error("Invalid input or weight during guess:", inputs[i], this.weights[i]);
+        console.error(
+          "Invalid input or weight during guess:",
+          inputs[i],
+          this.weights[i]
+        );
         throw new Error("Inputs or weights contain invalid values.");
       }
       sum += inputs[i] * this.weights[i];
     }
 
+    const w0 = this.weights[0];
+    const w1 = this.weights[1];
+    const w2 = this.weights[2];
+
+    document.querySelector("#w1").innerHTML = w0;
+    document.querySelector("#w2").innerHTML = w1;
+    document.querySelector("#w3").innerHTML = w2;
     return Perceptron.Activation_Function_sign(sum);
   }
 
@@ -51,10 +67,24 @@ class Perceptron {
     return -m * x - b;
   }
 
+  didWeightsChange() {
+    // Compare the current weights to the previous weights
+    for (let i = 0; i < this.weights.length; i++) {
+      if (this.weights[i] !== this.previousWeights[i]) {
+        this.previousWeights = [...this.weights]; // Update the previous weights
+        return true; // Weights have changed
+      }
+    }
+    return false; // No change in weights
+  }
+
   // Training function to adjust weights based on inputs and target
   train(inputs, target) {
     if (!Array.isArray(inputs) || inputs.length !== 3) {
-      console.error("Invalid inputs for training. Expected an array of length 3:", inputs);
+      console.error(
+        "Invalid inputs for training. Expected an array of length 3:",
+        inputs
+      );
       throw new Error("Inputs must be an array of length 3.");
     }
 
@@ -72,7 +102,11 @@ class Perceptron {
 
     for (let i = 0; i < this.weights.length; i++) {
       if (isNaN(inputs[i]) || isNaN(this.learningRate)) {
-        console.error("Invalid input or learning rate during training:", inputs[i], this.learningRate);
+        console.error(
+          "Invalid input or learning rate during training:",
+          inputs[i],
+          this.learningRate
+        );
         throw new Error("Inputs or learning rate contain invalid values.");
       }
 

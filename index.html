@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <h1>Perceptron Version-0 [Testing the functionality]</h1>
     <form id="canvasForm">
       <label for="lr">Learning Rate: </label>
       <input type="number" id="lr" name="lr" step="any" required /><br /><br />
@@ -21,9 +22,27 @@
       Line : y = <input type="number" name="m" id="m" /> x +
       <input type="number" name="c" id="c" /> <br /><br />
       <button type="submit">Submit</button>
+      <button id="resetButton">Reset</button>
+
     </form>
     <!-- Container for the canvas -->
     <div id="canvasContainer"></div>
+    <div class="values">
+      Bias:
+      <p id="bias">0</p>
+      <br />
+      Weight 1:
+      <p id="w1">0</p>
+      <br />
+      Weight 2:
+      <p id="w2">0</p>
+      <br />
+      Weight 3:
+      <p id="w3">0</p>
+      Output:
+      <p id="output">0</p>
+      <br />
+    </div>
   </body>
   <script type="module" src="JavaScript/sketch.js"></script>
 </html>
