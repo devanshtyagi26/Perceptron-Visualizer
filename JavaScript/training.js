@@ -47,4 +47,5 @@ class Point {
   }
 }
 
+export {f};
 export default Point;

@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.inputs {
+  background-color: #222222;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 10px;
+  display: grid;
+  width: 30rem;
+  height: 8.5rem;
+  color: white;
+  font-family: "Julius Sans One", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.3rem;
+  padding: 1rem;
+  position: relative;
+}
+.box {
+  display: flex;
+  position: relative;
+  width: fit-content;
+}
+.box p {
+  position: relative !important;
+}
+.x {
+  width: 2rem;
+}
+
+.y {
+  width: 5rem;
+}
+.inputs p {
+  margin: 0.3rem;
+  font-size: 1rem;
+}
+.inputs p,
+.inputs img {
+  position: absolute;
+}
+
+.inputs .lbrackets {
+  left: -7px;
+  transform: scale(1.2);
+  bottom: -6px;
+}
+.inputs .wave {
+  right: 0;
+  bottom: 0;
+  transform: scale(1.1);
+}
+
+.form .line1,
+.form .line2 {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.form .line2 {
+  gap: 0.2rem;
+}
+.form .line2 input {
+  width: 2rem !important;
+}
+.form input {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  outline: none;
+  padding: 0.6rem;
+  background: none;
+  width: 85%;
+  transition: all 160ms ease-in;
+}
+
+.inputs .form .box input:hover {
+  border-color: #eeff006f;
+}
+.inputs .form .box input:focus {
+  border-color: #EDFF00;
+}
+
+.inputs .form .line2 .box label {
+  left: 0.6rem !important;
+}
+.inputs .form .box label {
+  position: absolute;
+  user-select: none; /* Standard property */
+  -webkit-user-select: none; /* For Safari and older versions of Chrome */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For Internet Explorer/Edge */
+  align-self: center;
+  display: flex;
+  left: 1rem;
+  padding: 0 0.5rem;
+  color: white;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #222222;
+}
+
+.inputs .form .box input:focus ~ label,
+.inputs .form .box input:not(:placeholder-shown) ~ label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+}
+
+/* Hide arrows for number input in modern browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* For Chrome/Safari */
+  appearance: none; /* For modern browsers */
+  margin: 0; /* Remove margin for a cleaner look */
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; /* For Firefox */
+}

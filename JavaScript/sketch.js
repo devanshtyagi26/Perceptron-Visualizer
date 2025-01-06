@@ -1,5 +1,6 @@
 import Perceptron from "./perceptron.js";
 import Point from "./training.js";
+import { f } from "./training.js";
 
 let trainingIndex = 0;
 let canvasWidth = 500;
@@ -9,10 +10,6 @@ let mValue, cValue;
 let canvas;
 let points = [];
 let master;
-
-function f(x, m, c) {
-  return (m / 10) * x + c / 10;
-}
 
 // Function to handle form submission
 document
@@ -68,9 +65,8 @@ window.draw = function () {
   if (!weightsChanged) {
     // Stop training if weights have not changed
     noLoop(); // Stop the draw loop
-    alert(
-      `Training complete! The perceptron converged after ${trainingEpoch} epochs.`
-    );
+    console.log(trainingEpoch);
+    alert(`Perceptron Working! Now time for Front-End.`);
     return;
   }
 

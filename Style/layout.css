@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+body {
+  background-image: url(../Assets/background-texture.svg),
+    radial-gradient(#2c2608, #0c0f0e);
+  background-clip: unset;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: fit-content;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #2c2608;
+}
+
+#hero .heading {
+  font-family: "Julius Sans One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+
+  line-height: calc(20px + 20vh);
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+    0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  text-align: center;
+
+  border: 1px solid red;
+}
