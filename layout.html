@@ -6,70 +6,122 @@
     <title>Perceptron</title>
     <link rel="stylesheet" href="Style/layout.css" />
     <link rel="stylesheet" href="Style/box.css" />
+    <link rel="stylesheet" href="Style/neuron.css" />
+    <link rel="stylesheet" href="Style/inputs.css" />
   </head>
   <body>
     <section id="hero">
       <div class="heading">Perceptron Playground</div>
-      <div class="inputs">
-        <p>Inputs</p>
-        <img src="./Assets/input-lbracket.svg" class="lbrackets" alt="" />
-        <div class="form">
-          <div class="line1">
-            <div class="box">
-              <input
-                type="number"
-                id="lr"
-                name="lr"
-                step="any"
-                placeholder=" "
-                required
-              />
-              <label for="lr">Learning Rate </label>
+      <div class="variables">
+        <div class="inputs">
+          <p>Inputs</p>
+          <img src="./Assets/input-lbracket.svg" class="lbrackets" alt="" />
+          <div class="form">
+            <div class="line1">
+              <div class="box">
+                <input
+                  type="number"
+                  id="lr"
+                  name="lr"
+                  step="any"
+                  placeholder=" "
+                  required
+                />
+                <label for="lr">Learning Rate </label>
+              </div>
+              <div class="box">
+                <input
+                  type="number"
+                  id="points"
+                  name="points"
+                  step="any"
+                  placeholder=" "
+                  required
+                />
+                <label for="points">Input Points </label>
+              </div>
             </div>
-            <div class="box">
-              <input
-                type="number"
-                id="points"
-                name="points"
-                step="any"
-                placeholder=" "
-                required
-              />
-              <label for="points">Input Points </label>
+            <div class="line2">
+              <div class="box y">
+                <p>Line: Y =</p>
+              </div>
+              <div class="box">
+                <input
+                  type="number"
+                  id="m"
+                  name="m"
+                  step="any"
+                  placeholder=" "
+                  required
+                />
+                <label for="m">M </label>
+              </div>
+              <div class="box x">
+                <p>x +</p>
+              </div>
+              <div class="box">
+                <input
+                  type="number"
+                  id="c"
+                  name="c"
+                  step="any"
+                  placeholder=" "
+                  required
+                />
+                <label for="c">C </label>
+              </div>
             </div>
           </div>
-          <div class="line2">
-            <div class="box y">
-              <p>Line: Y =</p>
+          <img src="./Assets/input-wave.svg" class="wave" alt="" />
+        </div>
+        <div class="buttons">
+          <div class="ellipse"></div>
+          <button type="submit">Submit</button>
+          <button id="resetButton">Reset</button>
+          <img src="./Assets/hline.svg" alt="" />
+        </div>
+      </div>
+      <div class="displayBoxes">
+        <div class="graph">
+          <img src="Assets/graph.svg" alt="" />
+        </div>
+        <div class="neuronBox">
+          <p class="boxheading">single layer Perceptron</p>
+          <div class="neuron">
+            <div class="titles">
+              <p class="neuronTitles inputVals">Input Values</p>
+              <p class="neuronTitles weights">Weights</p>
+              <p class="neuronTitles summation">Summation</p>
+              <p class="neuronTitles stepFunc">
+                Step <br />
+                Function
+              </p>
+              <p class="neuronTitles output">Output</p>
             </div>
-            <div class="box">
-              <input
-                type="number"
-                id="m"
-                name="m"
-                step="any"
-                placeholder=" "
-                required
-              />
-              <label for="m">M </label>
-            </div>
-            <div class="box x">
-              <p>x +</p>
-            </div>
-            <div class="box">
-              <input
-                type="number"
-                id="c"
-                name="c"
-                step="any"
-                placeholder=" "
-                required
-              />
-              <label for="c">C </label>
+            <div class="values">
+              <div class="inputValues">
+                <p>-0.000</p>
+                <p>-0.000</p>
+                <p>-0.000</p>
+              </div>
+              <img src="Assets/arrows.svg" alt="" />
+              <div class="weights">
+                <p class="neuronCircle">-0.000</p>
+                <p class="neuronCircle">-0.000</p>
+                <p class="neuronCircle">-0.000</p>
+              </div>
+              <div class="summation">
+                <p class="neuronCircle">-0.000</p>
+              </div>
+              <div class="stepFunction">
+                <p class="neuronCircle">-0.000</p>
+              </div>
+              <div class="output">
+                <p>-0.000</p>
+              </div>
             </div>
           </div>
         </div>
-        <img src="./Assets/input-wave.svg" class="wave" alt="" />
       </div>
     </section>
   </body>

@@ -1,0 +1,120 @@
+.neuronBox {
+  width: 26.5rem;
+  padding: 0.5rem;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  border: 0.1px solid rgba(255, 255, 255, 0.36);
+  box-shadow: 8px 8px 21px black;
+  background-color: #101010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.neuronBox .boxheading {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+}
+
+.neuronBox .neuron {
+  display: flex;
+  flex-direction: column;
+}
+.neuronBox .neuron .titles {
+  display: flex;
+  height: 0.8rem;
+  gap: 1rem;
+  text-align: center;
+  position: relative;
+}
+.neuronBox .neuron .neuronTitles {
+  margin-bottom: 3rem;
+}
+.neuronBox .neuron .titles .inputVals {
+  position: absolute;
+  top: -21px;
+  left: -16px;
+}
+.neuronBox .neuron .titles .weights {
+  position: absolute;
+  top: -21px;
+  left: 75px;
+}
+.neuronBox .neuron .titles .summation {
+  position: absolute;
+  right: 152px;
+  top: 36px;
+}
+.neuronBox .neuron .titles .stepFunc {
+  position: absolute;
+  right: 71px;
+  top: 24px;
+}
+.neuronBox .neuron .titles .output {
+  position: absolute;
+  right: -7px;
+  top: 36px;
+}
+
+.neuronBox .neuron .values {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 0.4rem;
+}
+.neuronBox .neuron .values img {
+  width: 19rem;
+}
+
+.neuronBox .neuron .values .inputValues {
+  display: flex;
+  flex-direction: column;
+  gap: 2.72rem;
+}
+
+.neuronBox .neuron .values .weights {
+  position: absolute;
+  left: 64px;
+}
+.neuronBox .neuron .values .summation {
+  position: absolute;
+  right: 147px;
+}
+.neuronBox .neuron .values .stepFunction {
+  position: absolute;
+  right: 64px;
+}
+
+.neuronBox .neuron .neuronCircle {
+  padding: 0.1rem;
+  border: 1px solid white;
+  width: fit-content;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  margin: 1rem;
+}
+.neuronBox .neuron .weights .neuronCircle {
+  background-color: #ff00dd2b;
+  border-color: #ff00dd;
+  filter: drop-shadow(0 0 4px #ff00dd) drop-shadow(0 0 6px #ff00dd)
+    drop-shadow(0 0 4px #ff00dd);
+}
+.neuronBox .neuron .summation .neuronCircle {
+  background-color: #00e5ff19;
+  border-color: #00e5ff;
+  filter: drop-shadow(0 0 4px #00e5ff) drop-shadow(0 0 6px #00e5ff)
+    drop-shadow(0 0 4px #00e5ff);
+}
+.neuronBox .neuron .stepFunction .neuronCircle {
+  background-color: #00ff511b;
+  border-color: #00ff51;
+  filter: drop-shadow(0 0 4px #00ff51) drop-shadow(0 0 6px #00ff51)
+    drop-shadow(0 0 4px #00ff51);
+}

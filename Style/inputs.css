@@ -1,0 +1,183 @@
+.inputs,
+.buttons {
+  background-color: #222222;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 10px;
+  display: grid;
+  width: 21rem;
+  height: 6.5rem;
+  color: white;
+  font-family: "Julius Sans One", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 0.8rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.variables {
+  display: flex;
+  gap: 1rem;
+}
+.x {
+  margin: 0 0 0 0.4rem;
+  width: 1.8rem;
+}
+
+.y {
+  width: 4rem;
+}
+.inputs p {
+  margin: 0.3rem;
+  font-size: 0.8rem;
+}
+.inputs p,
+.inputs img {
+  position: absolute;
+}
+
+.inputs .lbrackets {
+  left: -16px;
+  bottom: -19px;
+}
+.inputs .wave {
+  right: 0;
+  bottom: 0;
+  user-select: none;
+  z-index: 0;
+}
+
+.form {
+  z-index: 2;
+}
+.form .line1,
+.form .line2 {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.form .line2 {
+  gap: 0.2rem;
+}
+.form .line2 input {
+  width: 1rem !important;
+}
+.form input {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  outline: none;
+  padding: 0.6rem;
+  background: none;
+  width: 85%;
+  transition: all 160ms ease-in;
+}
+
+.box {
+  display: flex;
+  position: relative;
+  width: fit-content;
+}
+.box p {
+  position: relative !important;
+}
+
+.inputs .form .box input:hover {
+  border-color: #eeff006f;
+}
+.inputs .form .box input:focus {
+  border-color: #edff00;
+}
+
+.inputs .form .line2 .box label {
+  left: 0.35rem !important;
+}
+.inputs .form .box label {
+  position: absolute;
+  user-select: none; /* Standard property */
+  -webkit-user-select: none; /* For Safari and older versions of Chrome */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For Internet Explorer/Edge */
+  align-self: center;
+  display: flex;
+  left: 1rem;
+  padding: 0 0.5rem;
+  color: white;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #222222;
+}
+
+.inputs .form .box input:focus ~ label,
+.inputs .form .box input:not(:placeholder-shown) ~ label {
+  top: -0.5rem;
+  font-size: 0.6rem;
+  left: 0.7rem;
+}
+
+/* Hide arrows for number input in modern browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* For Chrome/Safari */
+  appearance: none; /* For modern browsers */
+  margin: 0; /* Remove margin for a cleaner look */
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; /* For Firefox */
+}
+
+.buttons {
+  width: 10rem;
+  gap: 1rem;
+}
+.buttons button {
+  outline: none;
+  border: 2px solid #978473;
+  border-radius: 2rem;
+  background-color: #916a41;
+  color: white;
+  font-family: "Julius Sans One", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttons button:hover {
+  cursor: pointer;
+  background-color: #cba171;
+  border: 2px solid #d0b99d;
+  color: rgba(255, 255, 255, 1);
+  /* box-shadow: 0 5px 15px #cba1717e; */
+  filter: drop-shadow(0 0 3px #cba1717e) drop-shadow(0 0 8px #cba1717e)
+    drop-shadow(0 0 4px #cba1717e);
+}
+
+.buttons .ellipse {
+  background-color: #eaa94b;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 2rem;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  filter: drop-shadow(0 0 10px #eaa94b) drop-shadow(0 0 30px #eaa94b)
+    drop-shadow(0 0 50px #eaa94b);
+}
+
+.buttons img {
+  position: absolute;
+  right: -5px;
+  top: 31px;
+  transform: scale(1.3);
+}
