@@ -1,4 +1,4 @@
-.neuronBox {
+.neuronBox{
   width: 26.5rem;
   padding: 0.5rem;
   aspect-ratio: 1;
@@ -110,7 +110,7 @@
   background-color: #ff00dd2b;
   border-color: #ff00dd;
   filter: drop-shadow(0 0 4px #ff00dd) drop-shadow(0 0 6px #ff00dd)
-  drop-shadow(0 0 4px #ff00dd);
+    drop-shadow(0 0 4px #ff00dd);
 }
 
 .neuronBox .neuron .summation .neuronCircle {

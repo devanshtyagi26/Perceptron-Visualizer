@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="Style/box.css" />
     <link rel="stylesheet" href="Style/neuron.css" />
     <link rel="stylesheet" href="Style/inputs.css" />
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
   </head>
   <body>
     <section id="hero">
       <div class="heading">Perceptron Playground</div>
-      <div class="variables">
+
+      <form class="variables" id="canvasForm">
         <div class="inputs">
           <p>Inputs</p>
           <img src="./Assets/input-lbracket.svg" class="lbrackets" alt="" />
@@ -80,10 +83,12 @@
           <button id="resetButton">Reset</button>
           <img src="./Assets/hline.svg" alt="" />
         </div>
-      </div>
+      </form>
+
       <div class="displayBoxes">
         <div class="graph">
-          <img src="Assets/graph.svg" alt="" />
+          <img id="graphImg" src="Assets/graph.svg" alt="" />
+          <div id="canvasContainer"></div>
         </div>
         <div class="neuronBox">
           <p class="boxheading">single layer Perceptron</p>
@@ -132,7 +137,7 @@
                 <p class="hidden-element" id="stepa">-0.00000000000000</p>
               </div>
               <div class="output">
-                <p>-0.000</p>
+                <p id="output">-0.000</p>
               </div>
             </div>
           </div>
@@ -140,4 +145,5 @@
       </div>
     </section>
   </body>
+  <script type="module" src="JavaScript/sketch.js"></script>
 </html>

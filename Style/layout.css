@@ -56,3 +56,10 @@ body::-webkit-scrollbar-thumb {
   color: #fff6a9;
   text-align: center;
 }
+
+#canvasContainer {
+  display: none;
+  position: absolute;
+  left: 3.49%;
+  top: 5%;
+}

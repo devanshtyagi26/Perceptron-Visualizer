@@ -51,9 +51,9 @@ class Perceptron {
     const w1 = this.weights[1];
     const w2 = this.weights[2];
 
-    document.querySelector("#w1").innerHTML = w0;
-    document.querySelector("#w2").innerHTML = w1;
-    document.querySelector("#w3").innerHTML = w2;
+    document.querySelector("#weighta").innerHTML = w0;
+    document.querySelector("#weightb").innerHTML = w1;
+    document.querySelector("#weightc").innerHTML = w2;
     return Perceptron.Activation_Function_sign(sum);
   }
 

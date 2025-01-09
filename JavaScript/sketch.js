@@ -3,13 +3,14 @@ import Point from "./training.js";
 import { f } from "./training.js";
 
 let trainingIndex = 0;
-let canvasWidth = 500;
-let canvasHeight = 500;
+let canvasWidth = 435;
+let canvasHeight = 435;
 let isCanvasActive = false;
 let mValue, cValue;
 let canvas;
 let points = [];
 let master;
+let img;
 
 // Function to handle form submission
 document
@@ -34,11 +35,23 @@ document
       console.log("Invalid input values. Please check the form.");
     }
     // Show canvas container and activate canvas
-    document.getElementById("canvasContainer").style.display = "block";
+    document.getElementById("canvasContainer").style.display = "flex";
+    img = loadImage("../Assets/g2.svg"); // Replace with your image URL
     // Create canvas in setup and attach to the DOM container
     canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent("canvasContainer"); // Attach canvas to #canvasContainer
-    // Initialize Perceptron and Points
+
+    canvas.style("border", "0.1px solid rgba(255, 255, 255, 0.36)");
+    canvas.style("box-shadow", "8px 8px 21px black");
+    canvas.style("border-radius", "15px");
+
+    document.querySelector("#graphImg").style.visibility = "hidden";
+    // Remove the <main> tag if it exists
+    let mainElement = document.querySelector("main");
+    if (mainElement) {
+      mainElement.remove(); // This removes the <main> tag
+    }
+
     master = new Perceptron(learningRate);
     window.points = Array.from(
       { length: parseInt(NumOfPoints) },
@@ -70,7 +83,8 @@ window.draw = function () {
     return;
   }
 
-  background(220);
+  // background(220);
+  image(img, 0, 0, width, height);
   stroke(0);
 
   if (!window.points || window.points.length === 0) {
@@ -140,6 +154,7 @@ function clearCanvasVariables() {
   weightsChanged = true;
   // Hide the canvas container
   document.getElementById("canvasContainer").style.display = "none";
+  document.querySelector("#graphImg").style.visibility = "visible";
 
   // Remove any existing canvas
   if (canvas) {
