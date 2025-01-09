@@ -1,0 +1,59 @@
+/* Popup background (overlay) */
+#popupOverlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Popup container */
+#popup {
+  font-family: "Julius Sans One", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1rem;
+  color: white;
+  background-color: #222222;
+  width: 20vw;
+  height: 30vh;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1001;
+  text-align: center;
+  left: 40%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Close button styling */
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#popup .popupValues {
+  display: flex;
+  flex-direction: column;
+}
+#popup .popupValues * {
+  display: flex;
+  gap: 1rem;
+}

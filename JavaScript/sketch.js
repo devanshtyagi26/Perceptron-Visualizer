@@ -11,6 +11,8 @@ let canvas;
 let points = [];
 let master;
 let img;
+const popupOverlay = document.getElementById("popupOverlay");
+const closeBtn = document.querySelector(".closeBtn");
 
 // Function to handle form submission
 document
@@ -79,7 +81,19 @@ window.draw = function () {
     // Stop training if weights have not changed
     noLoop(); // Stop the draw loop
     console.log(trainingEpoch);
-    alert(`Perceptron Working! Now time for Front-End.`);
+    const w0 = document.querySelector("#weighta").innerHTML;
+    const w1 = document.querySelector("#weightb").innerHTML;
+    const w2 = document.querySelector("#weightc").innerHTML;
+    const i0 = document.querySelector("#input1").innerHTML;
+    const i1 = document.querySelector("#input2").innerHTML;
+    const i2 = document.querySelector("#input3").innerHTML;
+    popupOverlay.style.display = "flex";
+    document.querySelector("#popupinput1").innerHTML = i0;
+    document.querySelector("#popupinput2").innerHTML = i1;
+    document.querySelector("#popupinput3").innerHTML = i2;
+    document.querySelector("#popupweighta").innerHTML = w0;
+    document.querySelector("#popupweightb").innerHTML = w1;
+    document.querySelector("#popupweightc").innerHTML = w2;
     return;
   }
 
@@ -114,7 +128,7 @@ window.draw = function () {
     let inputs = [pt.x, pt.y, pt.bias];
     let target = pt.label;
     let guess = master.guess(inputs);
-    document.querySelector("#output").innerHTML = guess + ".000";
+
     if (guess == target) {
       fill(0, 255, 0);
     } else {
@@ -192,7 +206,7 @@ function resetEverything() {
   weightsChanged = true;
 
   // Optionally reset the UI elements like output or other dynamic content
-  document.querySelector("#output").innerHTML = "Ready for new input.";
+  document.querySelector("#output").innerHTML = "0.000";
 
   // Log or alert that everything has been reset
   console.log("Everything has been reset.");

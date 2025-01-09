@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="Style/box.css" />
     <link rel="stylesheet" href="Style/neuron.css" />
     <link rel="stylesheet" href="Style/inputs.css" />
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="Style/popup.css" />
   </head>
   <body>
     <section id="hero">
@@ -146,7 +145,42 @@
           </div>
         </div>
       </div>
+      <!-- Popup overlay and popup container -->
+      <div id="popupOverlay">
+        <div id="popup">
+          <button class="closeBtn">&times;</button>
+          <div class="popupValues">
+            <div>
+              Input A:
+              <div id="popupinput1">0</div>
+            </div>
+            <div>
+              Input B:
+              <div id="popupinput2">0</div>
+            </div>
+            <div>
+              Input C:
+              <div id="popupinput3">0</div>
+            </div>
+            <div>
+              Weight A:
+              <div id="popupweighta">0</div>
+            </div>
+            <div>
+              Weight B:
+              <div id="popupweightb">0</div>
+            </div>
+            <div>
+              Weight C:
+              <div id="popupweightc">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </body>
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
   <script type="module" src="JavaScript/sketch.js"></script>
+  <script src="./JavaScript/popup.js"></script>
 </html>
