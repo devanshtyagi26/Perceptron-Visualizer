@@ -28,6 +28,8 @@ document
     window.mValue = parseFloat(document.querySelector("#m").value);
     window.cValue = parseFloat(document.querySelector("#c").value);
 
+    document.querySelector(".neuronBox").scrollIntoView({ behavior: "smooth" });
+
     if (
       isNaN(learningRate) ||
       isNaN(NumOfPoints) ||

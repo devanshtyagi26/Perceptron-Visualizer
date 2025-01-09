@@ -80,4 +80,9 @@
   .neuronBox {
     transform: scale(0.9);
   }
+
+  #popup {
+    width: 72vw;
+    left: 9%;
+  }
 }
