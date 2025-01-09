@@ -4,69 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="Style/box.css" />
+    <link rel="stylesheet" href="./Style/neuron.css" />
+    <link rel="stylesheet" href="./Style/inputs.css" />
   </head>
   <body>
-    <div class="inputs">
-      <p>Inputs</p>
-      <img src="./Assets/input-lbracket.svg" class="lbrackets" alt="" />
-      <div class="form">
-        <div class="line1">
-          <div class="box">
-            <input
-              type="number"
-              id="lr"
-              name="lr"
-              step="any"
-              placeholder=" "
-              required
-            />
-            <label for="lr">Learning Rate </label>
-          </div>
-          <div class="box">
-            <input
-              type="number"
-              id="points"
-              name="points"
-              step="any"
-              placeholder=" "
-              required
-            />
-            <label for="points">Input Points </label>
-          </div>
+    <div class="neuronBox">
+      <p class="boxheading">single layer Perceptron</p>
+      <div class="neuron">
+        <div class="titles">
+          <p class="neuronTitles inputVals">Input Values</p>
+          <p class="neuronTitles weights">Weights</p>
+          <p class="neuronTitles summation">Summation</p>
+          <p class="neuronTitles stepFunc">
+            Step <br />
+            Function
+          </p>
+          <p class="neuronTitles output">Output</p>
         </div>
-        <div class="line2">
-          <div class="box y">
-            <p>Line: Y =</p>
+        <div class="values">
+          <div class="inputValues">
+            <p>-0.000</p>
+            <p>-0.000</p>
+            <p>-0.000</p>
           </div>
-          <div class="box">
-            <input
-              type="number"
-              id="m"
-              name="m"
-              step="any"
-              placeholder=" "
-              required
-            />
-            <label for="m">M </label>
+          <img src="Assets/arrows.svg" alt="" />
+          <div class="weights">
+            <div class="neuronCircle">
+              <p>-0.000</p>
+            </div>
+            <p class="hidden-element weighta">-0.00000000000000</p>
+            <div class="neuronCircle">
+              <p>-0.000</p>
+              <p class="hidden-element">-0.00000000000000</p>
+            </div>
+            <div class="neuronCircle">
+              <p>-0.000</p>
+              <p class="hidden-element">-0.00000000000000</p>
+            </div>
           </div>
-          <div class="box x">
-            <p>x +</p>
+          <div class="summation">
+            <p class="neuronCircle">-0.000</p>
           </div>
-          <div class="box">
-            <input
-              type="number"
-              id="c"
-              name="c"
-              step="any"
-              placeholder=" "
-              required
-            />
-            <label for="c">C </label>
+          <div class="stepFunction">
+            <p class="neuronCircle">-0.000</p>
+          </div>
+          <div class="output">
+            <p>-0.000</p>
           </div>
         </div>
       </div>
-      <img src="./Assets/input-wave.svg" class="wave" alt="" />
     </div>
   </body>
 </html>

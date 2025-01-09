@@ -10,6 +10,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: auto;
 }
 
 .neuronBox .boxheading {
@@ -79,6 +80,7 @@
 .neuronBox .neuron .values .weights {
   position: absolute;
   left: 64px;
+  z-index: auto;
 }
 .neuronBox .neuron .values .summation {
   position: absolute;
@@ -99,13 +101,18 @@
   align-items: center;
   border-radius: 3rem;
   margin: 1rem;
+  position: relative;
+  position: relative !important;
+  cursor: pointer;
+  z-index: 0;
 }
 .neuronBox .neuron .weights .neuronCircle {
   background-color: #ff00dd2b;
   border-color: #ff00dd;
   filter: drop-shadow(0 0 4px #ff00dd) drop-shadow(0 0 6px #ff00dd)
-    drop-shadow(0 0 4px #ff00dd);
+  drop-shadow(0 0 4px #ff00dd);
 }
+
 .neuronBox .neuron .summation .neuronCircle {
   background-color: #00e5ff19;
   border-color: #00e5ff;
