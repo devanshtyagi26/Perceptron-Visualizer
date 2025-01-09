@@ -42,7 +42,7 @@
     left: 0;
     border-radius: 0.5rem;
     padding: 0.6rem;
-    width: 5rem;
+    width: 6rem;
   }
 
   .inputs .form .box label {
@@ -65,5 +65,19 @@
   .displayBoxes {
     flex-direction: column;
     font-size: 0.7rem;
+  }
+
+  .graph img {
+    width: 100%;
+  }
+
+  #canvasContainer {
+    transform: scale(0.9);
+    left: 0%;
+    top: 0%;
+  }
+
+  .neuronBox {
+    transform: scale(0.9);
   }
 }
