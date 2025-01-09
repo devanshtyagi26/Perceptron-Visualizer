@@ -95,11 +95,14 @@ window.draw = function () {
   // Draw target line
   window.p1 = new Point(-1, f(-1, window.mValue, window.cValue));
   window.p2 = new Point(1, f(1, window.mValue, window.cValue));
+  stroke(210, 161, 33); // Line color: Red
+  strokeWeight(1.5);
   line(p1.getPixelX(), p1.getPixelY(), p2.getPixelX(), p2.getPixelY());
-
+  
   // Draw perceptron line
   window.p3 = new Point(-1, master.guessY(-1));
   window.p4 = new Point(1, master.guessY(1));
+  stroke(142, 50, 226); // Line color: Red
   line(p3.getPixelX(), p3.getPixelY(), p4.getPixelX(), p4.getPixelY());
 
   // Show points

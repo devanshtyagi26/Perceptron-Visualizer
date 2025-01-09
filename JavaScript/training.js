@@ -36,7 +36,7 @@ class Point {
   show() {
     stroke(0);
     if (this.label == 1) {
-      fill(255);
+      fill(144, 145, 145);
     } else {
       fill(0);
     }
