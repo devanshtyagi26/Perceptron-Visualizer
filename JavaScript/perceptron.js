@@ -12,7 +12,7 @@ class Perceptron {
       .fill(0)
       .map(() => Math.random() * 2 - 1); // Random numbers between -1 and 1
 
-      this.previousWeights = [...this.weights]; // Keep track of the previous weights
+    this.previousWeights = [...this.weights]; // Keep track of the previous weights
   }
 
   // Activation function (sign function)
@@ -50,10 +50,24 @@ class Perceptron {
     const w0 = this.weights[0];
     const w1 = this.weights[1];
     const w2 = this.weights[2];
-
+    const i0 = inputs[0];
+    const i1 = inputs[1];
+    const i2 = inputs[2];
+    document.querySelector("#i1").innerHTML = float(i0).toFixed(3);
+    document.querySelector("#i2").innerHTML = float(i1).toFixed(3);
+    document.querySelector("#i3").innerHTML = i2 + ".000";
+    document.querySelector("#input1").innerHTML = i0;
+    document.querySelector("#input2").innerHTML = i1;
+    document.querySelector("#input3").innerHTML = i2 + ".000";
     document.querySelector("#weighta").innerHTML = w0;
     document.querySelector("#weightb").innerHTML = w1;
     document.querySelector("#weightc").innerHTML = w2;
+    document.querySelector("#weightaShort").innerHTML = float(w0).toFixed(3);
+    document.querySelector("#weightbShort").innerHTML = float(w1).toFixed(3);
+    document.querySelector("#weightcShort").innerHTML = float(w2).toFixed(3);
+    document.querySelector("#summationa").innerHTML = sum;
+    document.querySelector("#summationaShort").innerHTML =
+      float(sum).toFixed(3);
     return Perceptron.Activation_Function_sign(sum);
   }
 
@@ -94,6 +108,9 @@ class Perceptron {
     }
 
     let guess = this.guess(inputs);
+    let change = document.querySelectorAll(".stepa");
+    change[0].innerHTML = guess + ".000";
+    change[1].innerHTML = guess + ".000";
     let error = target - guess;
     if (isNaN(error)) {
       console.error("Error is NaN during training:", error);

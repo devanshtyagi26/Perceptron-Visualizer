@@ -1,4 +1,4 @@
-.neuronBox{
+.neuronBox {
   width: 26.5rem;
   padding: 0.5rem;
   aspect-ratio: 1;
@@ -22,6 +22,7 @@
 .neuronBox .neuron {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .neuronBox .neuron .titles {
   display: flex;
@@ -36,27 +37,27 @@
 .neuronBox .neuron .titles .inputVals {
   position: absolute;
   top: -21px;
-  left: -16px;
+  left: -54px;
 }
 .neuronBox .neuron .titles .weights {
   position: absolute;
   top: -21px;
-  left: 75px;
+  left: 34px;
 }
 .neuronBox .neuron .titles .summation {
   position: absolute;
-  right: 152px;
-  top: 36px;
+  right: 107px;
+  top: 32px;
 }
 .neuronBox .neuron .titles .stepFunc {
   position: absolute;
-  right: 71px;
-  top: 24px;
+  right: 28px;
+  top: 20px;
 }
 .neuronBox .neuron .titles .output {
   position: absolute;
-  right: -7px;
-  top: 36px;
+  right: -46px;
+  top: 32px;
 }
 
 .neuronBox .neuron .values {
@@ -75,32 +76,38 @@
   display: flex;
   flex-direction: column;
   gap: 2.72rem;
+  position: absolute;
+  left: -14%;
 }
 
 .neuronBox .neuron .values .weights {
   position: absolute;
-  left: 64px;
+  left: 27px;
   z-index: auto;
 }
 .neuronBox .neuron .values .summation {
   position: absolute;
-  right: 147px;
+  right: 109px;
 }
 .neuronBox .neuron .values .stepFunction {
   position: absolute;
-  right: 64px;
+  right: 26px;
+}
+.neuronBox .neuron .values .output {
+  position: absolute;
+  right: -13%;
 }
 
 .neuronBox .neuron .neuronCircle {
   padding: 0.1rem;
   border: 1px solid white;
-  width: fit-content;
+  width: 2.5rem;
   aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 3rem;
-  margin: 1rem;
+  margin: 0.6rem;
   position: relative;
   position: relative !important;
   cursor: pointer;

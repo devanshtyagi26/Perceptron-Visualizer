@@ -235,3 +235,28 @@ input[type="number"] {
   visibility: visible;
   opacity: 1;
 }
+#i1,
+#i2,
+#i3 {
+  cursor: pointer;
+  position: relative;
+}
+
+#i1:hover + #input1,
+#input1:hover {
+  top: 15%; /* Moves the tooltip above the parent */
+  visibility: visible;
+  opacity: 1;
+}
+#i2:hover + #input2,
+#input2:hover {
+  top: 60%; /* Moves the tooltip above the parent */
+  visibility: visible;
+  opacity: 1;
+}
+#i3:hover + #input3,
+#input3:hover {
+  top: 110%; /* Moves the tooltip above the parent */
+  visibility: visible;
+  opacity: 1;
+}

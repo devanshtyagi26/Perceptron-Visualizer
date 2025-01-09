@@ -95,10 +95,10 @@ window.draw = function () {
   // Draw target line
   window.p1 = new Point(-1, f(-1, window.mValue, window.cValue));
   window.p2 = new Point(1, f(1, window.mValue, window.cValue));
-  stroke(210, 161, 33); // Line color: Red
+  stroke(210, 161, 33);
   strokeWeight(1.5);
   line(p1.getPixelX(), p1.getPixelY(), p2.getPixelX(), p2.getPixelY());
-  
+
   // Draw perceptron line
   window.p3 = new Point(-1, master.guessY(-1));
   window.p4 = new Point(1, master.guessY(1));
@@ -114,7 +114,7 @@ window.draw = function () {
     let inputs = [pt.x, pt.y, pt.bias];
     let target = pt.label;
     let guess = master.guess(inputs);
-    document.querySelector("#output").innerHTML = guess;
+    document.querySelector("#output").innerHTML = guess + ".000";
     if (guess == target) {
       fill(0, 255, 0);
     } else {
