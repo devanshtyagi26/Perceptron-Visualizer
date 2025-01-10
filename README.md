@@ -1,6 +1,6 @@
 # Interactive Single-Layer Perceptron (Perceptron Playground)
 
-[Watch the video](./Assets/Demo%20Video/Demo.mp4)
+![Sample](./Assets/Sample/sample.png)
 
 Welcome to the **Interactive Single-Layer Perceptron** project! This tool is a visually intuitive and interactive implementation of a perceptron, designed to classify points based on a linear decision boundary. It provides real-time feedback on the learning process, making it a great resource for understanding the fundamentals of machine learning.
 
