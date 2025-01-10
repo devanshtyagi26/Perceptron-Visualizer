@@ -25,16 +25,7 @@ The perceptron is a simple linear classifier that adjusts its weights based on t
 2. **Perceptron Training**:
 
    - The perceptron updates its weights incrementally using the perceptron learning rule:
-   - <img src="https://latex.codecogs.com/gif.latex?
-     \mathbf{w} \leftarrow \mathbf{w} + \eta (y - \hat{y}) \mathbf{x}" />
-
-     where:
-
-     - \( <img src="https://latex.codecogs.com/gif.latex?\mathbf{w} " /> \): weight vector
-     - \( <img src="https://latex.codecogs.com/gif.latex?\eta " /> \): learning rate
-     - \( <img src="https://latex.codecogs.com/gif.latex?y " /> \): actual label
-     - \( <img src="https://latex.codecogs.com/gif.latex?\hat{y} " /> \): predicted label
-     - \( <img src="https://latex.codecogs.com/gif.latex?\mathbf{x} " />\): input vector
+     ![rule](https://vitalflux.com/wp-content/uploads/2020/10/Screenshot-2020-10-11-at-9.45.54-AM.png)
 
 3. **Visualization**:
    - The decision boundary is updated dynamically to reflect the perceptron's learning progress.
