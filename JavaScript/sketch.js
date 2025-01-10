@@ -208,7 +208,28 @@ function resetEverything() {
   weightsChanged = true;
 
   // Optionally reset the UI elements like output or other dynamic content
-  document.querySelector("#output").innerHTML = "0.000";
+  document.querySelector("#output").innerHTML = "-0.000";
+
+  document.querySelector("#i1").innerHTML = "-0.000";
+  document.querySelector("#i2").innerHTML = "-0.000";
+  document.querySelector("#i3").innerHTML = "-0.000";
+  document.querySelector("#input1").innerHTML = "-0.00000000000000";
+  document.querySelector("#input2").innerHTML = "-0.00000000000000";
+  document.querySelector("#input3").innerHTML = "-0.00000000000000";
+
+  document.querySelector("#weighta").innerHTML = "-0.00000000000000";
+  document.querySelector("#weightb").innerHTML = "-0.00000000000000";
+  document.querySelector("#weightc").innerHTML = "-0.00000000000000";
+
+  document.querySelector("#weightaShort").innerHTML = "-0.000";
+  document.querySelector("#weightbShort").innerHTML = "-0.000";
+  document.querySelector("#weightcShort").innerHTML = "-0.000";
+  document.querySelector("#summationa").innerHTML = "-0.00000000000000";
+  document.querySelector("#summationaShort").innerHTML = "-0.000";
+
+  let change = document.querySelectorAll(".stepa");
+  change[0].innerHTML = "-0.000";
+  change[1].innerHTML = "-0.00000000000000";
 
   // Log or alert that everything has been reset
   console.log("Everything has been reset.");

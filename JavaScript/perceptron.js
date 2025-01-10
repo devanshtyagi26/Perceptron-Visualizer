@@ -59,11 +59,11 @@ class Perceptron {
     document.querySelector("#input1").innerHTML = i0;
     document.querySelector("#input2").innerHTML = i1;
     document.querySelector("#input3").innerHTML = i2 + ".000";
-    
+
     document.querySelector("#weighta").innerHTML = w0;
     document.querySelector("#weightb").innerHTML = w1;
     document.querySelector("#weightc").innerHTML = w2;
-    
+
     document.querySelector("#weightaShort").innerHTML = float(w0).toFixed(3);
     document.querySelector("#weightbShort").innerHTML = float(w1).toFixed(3);
     document.querySelector("#weightcShort").innerHTML = float(w2).toFixed(3);
@@ -113,6 +113,7 @@ class Perceptron {
     let change = document.querySelectorAll(".stepa");
     change[0].innerHTML = guess + ".000";
     change[1].innerHTML = guess + ".000";
+    document.querySelector("#output").innerHTML = guess + ".000";
     let error = target - guess;
     if (isNaN(error)) {
       console.error("Error is NaN during training:", error);
