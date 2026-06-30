@@ -50,7 +50,7 @@ The perceptron is a simple linear classifier that adjusts its weights based on t
 
 ## Demo
 
-Check out the live demo here: [Live Demo](https://perceptron-playground.vercel.app/)
+Check out the live demo here: [Live Demo](https://perceptronplayground.devanshtyagi.me/)
 
 ---
 
